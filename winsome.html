@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Winsome Model Schools - A premier WAEC and NECO registered school in Ifako, Lagos, Nigeria, offering world-class education and modern facilities.">
+  <meta name="keywords" content="Winsome Model Schools, WAEC registered school, NECO accredited school, Ifako Lagos education, best school in Nigeria">
+  <meta name="author" content="Winsome Model Schools">
+  <title>Winsome Model Schools - Excellence in Education</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #003087;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #0056b3;
+    }
+
+    .btn-gold {
+      background: #ffd700;
+      color: #003087;
+    }
+
+    .btn-gold:hover {
+      background: #e6c200;
+    }
+
+    .section-title {
+      color: #003087;
+      font-size: 44px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #ffd700;
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 48, 135, 0.9);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    header.scrolled {
+      background: #003087;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo img {
+      height: 80px;
+      transition: transform 0.3s;
+    }
+
+    header .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080?text=Winsome+Model+Schools+Building') no-repeat center;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease-out 0.5s;
+      animation-fill-mode: both;
+    }
+
+    .hero .quick-links {
+      display: flex;
+      gap: 20px;
+      animation: fadeInUp 1s ease-out 1s;
+      animation-fill-mode: both;
+    }
+
+    /* About Section */
+    #about {
+      padding: 120px 0;
+      background: linear-gradient(135deg, #ffffff 50%, #f4f4f4 50%);
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .leadership-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .leadership-card h3 {
+      color: #003087;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .leadership-card p {
+      color: #777;
+      font-size: 16px;
+    }
+
+    /* Academics Section */
+    #academics {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .academics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .academics-card {
+      background: #f4f4f4;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .academics-card:hover {
+      transform: scale(1.05);
+    }
+
+    .academics-card h3 {
+      color: #003087;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    /* Admissions Section */
+    #admissions {
+      padding: 120px 0;
+      background: linear-gradient(135deg, #f4f4f4 50%, #ffffff 50%);
+    }
+
+    .admissions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .admissions-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .admissions-card h3 {
+      color: #003087;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    /* Faculty Section */
+    #faculty {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .faculty-card {
+      background: #f4f4f4;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .faculty-card h3 {
+      color: #003087;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Facilities Section */
+    #facilities {
+      padding: 120px 0;
+      background: linear-gradient(135deg, #ffffff 50%, #f4f4f4 50%);
+    }
+
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .facility-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .facility-card:hover {
+      transform: scale(1.05);
+    }
+
+    .facility-card i {
+      font-size: 50px;
+      color: #003087;
+      margin-bottom: 20px;
+    }
+
+    .facility-card p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Student Life Section */
+    #student-life {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .student-life-content {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .testimonial-slider {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-slide {
+      display: none;
+      padding: 40px;
+      background: #f4f4f4;
+      border-radius: 15px;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+    }
+
+    .testimonial-slide p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-slide span {
+      font-weight: 600;
+      color: #003087;
+    }
+
+    .slider-nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .slider-nav button {
+      background: #003087;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .slider-nav button:hover {
+      background: #0056b3;
+    }
+
+    /* News & Events Section */
+    #news {
+      padding: 120px 0;
+      background: linear-gradient(135deg, #f4f4f4 50%, #ffffff 50%);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .news-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .news-card h3 {
+      color: #003087;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 120px 0;
+      background: #f4f4f4;
+    }
+
+    .contact-info {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .contact-info p {
+      margin-bottom: 15px;
+    }
+
+    .contact-info .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .hours-grid div {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .hours-grid .closed {
+      background: #ddd;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #003087;
+      outline: none;
+    }
+
+    .contact-form button {
+      background: #003087;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+
+    .map {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    /* Footer */
+    footer {
+      background: #003087;
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    footer .footer-links {
+      margin-bottom: 20px;
+    }
+
+    footer .footer-links a {
+      color: #ffd700;
+      margin: 0 15px;
+      font-size: 16px;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer .social-icons {
+      margin: 20px 0;
+    }
+
+    footer .social-icons a {
+      color: white;
+      font-size: 24px;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: #ffd700;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      header .logo img {
+        height: 60px;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+        background: #003087;
+        padding: 20px 0;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+      }
+
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 22px;
+      }
+
+      .hero .quick-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+
+      .about-content,
+      .student-life-content,
+      .contact-info {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="#home"><img src="https://via.placeholder.com/180x80?text=Winsome+Model+Schools+Logo" alt="Winsome Model Schools Logo"></a>
+    </div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#faculty">Faculty & Staff</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#student-life">Student Life</a></li>
+        <li><a href="#news">News & Events</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <h1>Welcome to Winsome Model Schools</h1>
+    <p>A Premier WAEC & NECO Registered Institution in Ifako, Lagos</p>
+    <div class="quick-links">
+      <a href="#admissions" class="btn btn-gold">Apply Now</a>
+      <a href="#about" class="btn">Learn More</a>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <p>Established in 1995, Winsome Model Schools stands as a beacon of educational excellence in Ifako, Lagos, Nigeria. Officially registered with both the West African Examinations Council (WAEC) and the National Examinations Council (NECO), we are committed to delivering a world-class education that fosters academic rigor, critical thinking, and character development.</p>
+      <p>Our institution is deeply rooted in the values of integrity, innovation, and community service. With a legacy spanning over two decades, we have consistently produced graduates who excel in national examinations and go on to become leaders in various fields across Nigeria and beyond.</p>
+      <p><strong>Vision:</strong> To nurture innovative leaders equipped to thrive in a global society.</p>
+      <p><strong>Mission:</strong> To provide a transformative learning experience through quality teaching, modern facilities, and a holistic approach to education.</p>
+    </div>
+    <h3 style="text-align: center; color: #003087; margin-bottom: 40px;">Our Leadership Team</h3>
+    <div class="leadership-grid">
+      <div class="leadership-card">
+        <h3>Dr. John Adebayo</h3>
+        <p>Principal<br>Ph.D. in Educational Leadership<br>Over 25 years of experience in education administration.</p>
+      </div>
+      <div class="leadership-card">
+        <h3>Mrs. Jane Okonkwo</h3>
+        <p>Vice Principal<br>M.Ed. in Curriculum Development<br>Expert in pedagogy and student mentorship.</p>
+      </div>
+      <div class="leadership-card">
+        <h3>Mr. David Oluwaseun</h3>
+        <p>Head of Academics<br>M.Sc. in Education Management<br>Specializes in curriculum design and teacher training.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academics Section -->
+  <section id="academics" class="container">
+    <h2 class="section-title">Academics</h2>
+    <div class="academics-grid">
+      <div class="academics-card">
+        <h3>Curriculum</h3>
+        <p>Our curriculum is meticulously designed to meet WAEC and NECO standards, covering a wide range of subjects including Mathematics, English Language, Sciences, Arts, and Vocational Studies. We emphasize critical thinking, problem-solving, and practical application of knowledge.</p>
+      </div>
+      <div class="academics-card">
+        <h3>Teaching Methodology</h3>
+        <p>We employ a student-centered approach, blending traditional teaching methods with modern technology. Interactive smartboards, project-based learning, and collaborative activities ensure students are engaged and motivated.</p>
+      </div>
+      <div class="academics-card">
+        <h3>Academic Achievements</h3>
+        <p>Consistently achieving a 98% pass rate in WAEC and NECO exams, our students have won numerous awards in national competitions, including the National Mathematics Olympiad and the Nigerian Science Fair.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admissions Section -->
+  <section id="admissions" class="container">
+    <h2 class="section-title">Admissions</h2>
+    <div class="admissions-grid">
+      <div class="admissions-card">
+        <h3>Admission Process</h3>
+        <p>1. Obtain and submit the application form.<br>2. Attend the entrance examination.<br>3. Participate in an interview with the admissions panel.</p>
+      </div>
+      <div class="admissions-card">
+        <h3>Requirements</h3>
+        <p>- Birth Certificate<br>- Previous School Records<br>- Two Passport Photographs<br>- Medical Report</p>
+      </div>
+      <div class="admissions-card">
+        <h3>Fees Structure</h3>
+        <p>Tuition fees vary by level. Please contact the admissions office for the latest fee schedule. Scholarships and financial aid are available for qualifying students.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="admission-form.pdf" class="btn btn-gold" download>Download Admission Form</a>
+    </div>
+  </section>
+
+  <!-- Faculty & Staff Section -->
+  <section id="faculty" class="container">
+    <h2 class="section-title">Faculty & Staff</h2>
+    <div class="faculty-grid">
+      <div class="faculty-card">
+        <h3>Mr. Alex Brown</h3>
+        <p>Head of Mathematics<br>M.Sc. in Mathematics Education<br>15 years of teaching experience.</p>
+      </div>
+      <div class="faculty-card">
+        <h3>Mrs. Emily Green</h3>
+        <p>English Literature Teacher<br>B.A. in English Literature<br>Passionate about creative writing.</p>
+      </div>
+      <div class="faculty-card">
+        <h3>Dr. Sarah Adeyemi</h3>
+        <p>Science Coordinator<br>Ph.D. in Chemistry<br>Leads the school’s STEM initiatives.</p>
+      </div>
+      <div class="faculty-card">
+        <h3>Mr. Peter Obi</h3>
+        <p>Physical Education Coach<br>B.Sc. in Sports Science<br>Former national athlete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section id="facilities" class="container">
+    <h2 class="section-title">Facilities</h2>
+    <div class="facilities-grid">
+      <div class="facility-card">
+        <i class="fas fa-chalkboard"></i>
+        <p>State-of-the-Art Classrooms with interactive smartboards and ergonomic furniture.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-flask"></i>
+        <p>Advanced Science Laboratories for Physics, Chemistry, and Biology experiments.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-book"></i>
+        <p>Well-Stocked Library with over 10,000 books, e-books, and research resources.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-futbol"></i>
+        <p>World-Class Sports Facilities including a football field, basketball court, and swimming pool.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-laptop"></i>
+        <p>ICT Center with high-speed internet and modern computers for digital learning.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-heartbeat"></i>
+        <p>School Clinic with qualified nurses and first-aid services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Life Section -->
+  <section id="student-life" class="container">
+    <h2 class="section-title">Student Life</h2>
+    <div class="student-life-content">
+      <p>At Winsome Model Schools, we believe in nurturing well-rounded individuals. Our students engage in a vibrant array of extracurricular activities, including sports, debate clubs, cultural societies, and community service programs. From annual cultural festivals to inter-school competitions, there’s always something exciting happening on campus.</p>
+    </div>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide active">
+        <p>"Winsome Model Schools has transformed my child’s academic journey. The teachers are exceptional, and the facilities are top-notch."</p>
+        <span>- Mrs. Adeola, Parent</span>
+      </div>
+      <div class="testimonial-slide">
+        <p>"I’ve grown so much since joining Winsome. The opportunities to participate in debates and sports have boosted my confidence."</p>
+        <span>- Tolu, Student</span>
+      </div>
+      <div class="testimonial-slide">
+        <p>"The school’s focus on holistic education has prepared me for the future. I’m proud to be a Winsome student."</p>
+        <span>- Chinedu, Alumni</span>
+      </div>
+      <div class="slider-nav">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- News & Events Section -->
+  <section id="news" class="container">
+    <h2 class="section-title">News & Events</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <h3>Annual Sports Day</h3>
+        <p>Join us on April 15, 2025, for our Annual Sports Day, featuring exciting competitions and activities for all students.</p>
+      </div>
+      <div class="news-card">
+        <h3>New Session Registration</h3>
+        <p>Registration for the 2025/2026 academic session begins on March 20, 2025. Secure your spot today!</p>
+      </div>
+      <div class="news-card">
+        <h3>Science Fair 2025</h3>
+        <p>Our students will showcase innovative projects at the National Science Fair on May 10, 2025. Come support them!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Address:</strong> Araromi Street, Ifako-Jaiye, Ojooromo, Lagos, Nigeria</p>
+      <p><strong>Phone:</strong> +234 803 231 9017</p>
+      <p><strong>Email:</strong> info@winsomemodelschools.org</p>
+      <p><strong>Operating Hours:</strong></p>
+      <div class="hours-grid">
+        <div>Monday<br>8am-6pm</div>
+        <div>Tuesday<br>8am-6pm</div>
+        <div>Wednesday<br>8am-6pm</div>
+        <div>Thursday<br>8am-6pm</div>
+        <div>Friday<br>8am-6pm</div>
+        <div class="closed">Saturday<br>Closed</div>
+        <div class="closed">Sunday<br>Closed</div>
+      </div>
+    </div>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.907123456789!2d3.3167!3d6.6333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzgnMDAiTiAzwrE5JzAwIkU!5e0!3m2!1sen!2sng!4v16787654321!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
+    <div class="contact-form">
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FAQs</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2025 Winsome Model Schools. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile Navigation Toggle
+    function toggleNav() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+
+    // Testimonial Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Form Submission
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('contact-form');
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Simulate form submission (replace with actual backend logic)
+      console.log('Form Data:', data);
+      alert('Thank you for your message! We will get back to you soon.');
+      form.reset();
+    }
+  </script>
+</body>
+</html>
